@@ -2,32 +2,14 @@ import java.util.Scanner;
 
 public class Main4 {
     public static int solution(int n) {
-        int answer = 0, sum = 0, cnt = 0, lt = 1, rt = 1;
+        int answer = 0, cnt = 1;
+        n--;
 
-        while (true) {
-            if (cnt == 2 && sum > n) {
-                break;
-            }
-
-            if (sum > n) {
-                rt = ++lt;
-                cnt = 0;
-                sum = 0;
-                continue;
-            }
-
-            sum += rt++;
+        while (n > 0) {
             cnt++;
-
-            if (sum == n) {
-                answer++;
-                rt = ++lt;
-                cnt = 0;
-                sum = 0;
-            }
+            n -= cnt;
+            if (n % cnt == 0) answer++;
         }
-
-
         return answer;
     }
 
