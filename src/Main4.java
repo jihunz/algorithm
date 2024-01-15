@@ -15,7 +15,8 @@ public class Main4 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-        System.out.println(solution(x));
+        int n = scanner.nextInt();
+
+        System.out.println(solution(n));
     }
 }
