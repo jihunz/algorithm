@@ -1,17 +1,10 @@
+package twoPointerAndSlidingWindow;
+
 import java.util.Scanner;
 
-public class Main3 {
+public class Main5 {
     public static int solution(int n, int m, int[] arr) {
-        int answer = 0, sum = 0;
-
-        for (int i = 0; i < m; i++) sum += arr[i];
-        answer = sum;
-
-        for (int i = m; i < n; i++) {
-            sum += (arr[i] - arr[i-m]);
-            answer = Math.max(answer, sum);
-        }
-
+        int answer = 0;
         return answer;
     }
 

@@ -1,7 +1,9 @@
+package hashMapAndTreeSet;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main2 {
+public class Main {
     public static char solution(int n, String s) {
         char answer = ' ';
         HashMap<Character, Integer> map = new HashMap<>();
