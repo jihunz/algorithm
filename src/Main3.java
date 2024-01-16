@@ -1,26 +1,39 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main3 {
-    public static String solution(String s, String s2) {
-        String answer = "YES";
-        HashMap<Character, Integer> map = new HashMap<>();
-        for (char x : s.toCharArray()) {
-            map.put(x, map.getOrDefault(x, 0)+1);
+    public static ArrayList<Integer> solution(int n, int m, int[] arr) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < m - 1; i++) {
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
 
-        for (char k : s2.toCharArray()) {
-            if (!map.containsKey(k) || map.get(k) == 0) answer = "NO";
-            map.put(k, map.get(k)-1);
-        }
+        int lt = 0;
+        for (int rt = m - 1; rt < n; rt++) {
+            map.put(arr[rt], map.getOrDefault(arr[rt], 0) + 1);
+            answer.add(map.size());
 
+            map.put(arr[lt], map.get(arr[lt]) - 1);
+            if (map.get(arr[lt]) == 0) map.remove(arr[lt]);
+            lt++;
+        }
         return answer;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String s = scanner.next();
-        String s2 = scanner.next();
-        System.out.println(solution(s, s2));
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        for (int x : solution(n, m, arr)) {
+            System.out.print(x + " ");
+        }
     }
 }
