@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Main2 {
+public class Main3 {
     public static String solution(String s, String s2) {
         String answer = "YES";
         HashMap<Character, Integer> map = new HashMap<>();
