@@ -1,3 +1,5 @@
+package hashMapAndTreeSet;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
