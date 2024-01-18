@@ -7,17 +7,16 @@ public class Main2 {
         Stack<Character> stack = new Stack<>();
 
         for (char x : s.toCharArray()) {
-            if (x == '(') {
-                stack.push(x);
-            } else if (x == ')') {
-                stack.pop();
+            if (x == ')') {
+                while (stack.pop() != '(');
             } else {
-                if (stack.isEmpty()) answer += x;
+                stack.push(x);
             }
-
         }
 
-
+        for (int i = 0; i < stack.size(); i++) {
+            answer += stack.get(i);
+        }
         return answer;
     }
 
