@@ -1,3 +1,5 @@
+package stackAndQueue;
+
 import java.util.*;
 
 public class Main8 {

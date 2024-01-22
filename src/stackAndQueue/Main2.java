@@ -1,3 +1,5 @@
+package stackAndQueue;
+
 import java.util.Scanner;
 import java.util.Stack;
 
