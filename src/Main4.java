@@ -23,8 +23,8 @@ public class Main4 {
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
         int b = scanner.nextInt();
-        int[] arr = new int[a];
-        for (int i = 0; i < a; i++) {
+        int[] arr = new int[b];
+        for (int i = 0; i < b; i++) {
             arr[i] = scanner.nextInt();
         }
         for (int x : solution(a, b, arr)) {
