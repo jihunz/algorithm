@@ -1,28 +1,36 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main7 {
+public class Main9 {
     public static int solution(int size, int target, int[] arr) {
         int answer = 0;
-        Arrays.sort(arr);
+        int lt = Arrays.stream(arr).min().getAsInt();
+        int rt = Arrays.stream(arr).sum();
 
-        int lt = 0, rt = size - 1;
         while (lt <= rt) {
             int mid = (lt + rt) / 2;
-
-            if (arr[mid] == target) {
-                answer = mid + 1;
-                break;
-            }
-
-            if (target < arr[mid]) {
+            if (count(arr, mid) <= target) {
+                answer = mid;
                 rt = mid - 1;
             } else {
                 lt = mid + 1;
             }
         }
         return answer;
+    }
+
+    private static int count(int[] arr, int capacity) {
+        int cnt = 1, sum = 0;
+        for (int x : arr) {
+            if (sum + x > capacity) {
+                cnt++;
+                sum = x;
+            } else {
+                sum += x;
+            }
+        }
+
+        return cnt;
     }
 
     public static void main(String[] args) {
