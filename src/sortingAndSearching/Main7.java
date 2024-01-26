@@ -1,36 +1,30 @@
+package sortingAndSearching;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main9 {
+public class Main7 {
     public static int solution(int size, int target, int[] arr) {
         int answer = 0;
-        int lt = Arrays.stream(arr).min().getAsInt();
-        int rt = Arrays.stream(arr).sum();
+        Arrays.sort(arr);
 
+        int lt = 0, rt = size - 1;
         while (lt <= rt) {
             int mid = (lt + rt) / 2;
-            if (count(arr, mid) <= target) {
-                answer = mid;
+
+            if (arr[mid] == target) {
+                answer = mid + 1;
+                break;
+            }
+
+            if (target < arr[mid]) {
                 rt = mid - 1;
             } else {
                 lt = mid + 1;
             }
         }
         return answer;
-    }
-
-    private static int count(int[] arr, int capacity) {
-        int cnt = 1, sum = 0;
-        for (int x : arr) {
-            if (sum + x > capacity) {
-                cnt++;
-                sum = x;
-            } else {
-                sum += x;
-            }
-        }
-
-        return cnt;
     }
 
     public static void main(String[] args) {

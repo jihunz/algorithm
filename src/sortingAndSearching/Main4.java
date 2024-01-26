@@ -1,3 +1,5 @@
+package sortingAndSearching;
+
 import java.util.Scanner;
 
 public class Main4 {
