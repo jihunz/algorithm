@@ -17,8 +17,8 @@ public class Main5 {
         if (root == null) return;
         else {
             dfs(root.lt);
-            System.out.print(root.data + " ");
             dfs(root.rt);
+            System.out.print(root.data + " ");
         }
     }
 
