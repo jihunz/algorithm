@@ -1,3 +1,5 @@
+package dfsAndBfs;
+
 public class Main6 {
     static int n;
     static int[] chk;

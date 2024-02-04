@@ -1,3 +1,5 @@
+package dfsAndBfs;
+
 class Node4 {
     int val;
     Node4 lt, rt;

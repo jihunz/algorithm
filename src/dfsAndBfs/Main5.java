@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package dfsAndBfs;
 
 class Node {
     int data;

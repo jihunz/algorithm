@@ -1,14 +1,24 @@
+package dfsAndBfs;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main14 {
+public class Main13 {
     static int node, edge, answer = 0;
     static ArrayList<ArrayList<Integer>> graph;
-    static int[] dis;
+    static int[] chk;
 
 
     public static void dfs(int val) {
         if (val == node) answer++;
+        else {
+            for (int nv : graph.get(val)) {
+                if (chk[nv] == 0) {
+                    chk[nv] = 1;
+                    dfs(nv);
+                    chk[nv] = 0;
+                }
+            }
         }
     }
 
@@ -16,7 +26,7 @@ public class Main14 {
         Scanner scanner = new Scanner(System.in);
         node = scanner.nextInt();
         edge = scanner.nextInt();
-        dis = new int[node + 1];
+        chk = new int[node + 1];
 
         graph = new ArrayList<>();
         for (int i = 0; i <= node; i++) {
@@ -28,11 +38,9 @@ public class Main14 {
             graph.get(a).add(b);
         }
 
+        chk[1] = 1;
         dfs(1);
-
-        for (int i = 2; i <= node; i++) {
-            System.out.println(i + " : " + dis[i]);
-        }
+        System.out.println(answer);
 
     }
 }

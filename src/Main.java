@@ -1,18 +1,36 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void recursive(int x) {
-        if (x == 0) return;
-        else {
-            System.out.print(x + " ");
-            recursive(x - 1);
+    static String answer = "NO";
+    static int n, total = 0;
+    static boolean flag = false;
+
+    public static void dfs(int level, int sum, int[] arr) {
+        if (flag) return;
+        if (sum > total) return;
+
+        if (level == n) {
+            if ((total-sum) == sum) {
+                answer = "YES";
+                flag = true;
+            }
+        } else {
+            dfs(level+1, sum+arr[level], arr);
+            dfs(level+1, sum, arr);
         }
 
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
-        recursive(x);
+        n = scanner.nextInt();
+        int[] arr = new int[n];
+        for (int i=0; i<n; i++) {
+            arr[i] = scanner.nextInt();
+            total += arr[i];
+        }
+
+        dfs(0, 0, arr);
+        System.out.println(answer);
     }
 }
