@@ -2,13 +2,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main2 {
-    static ArrayList<Integer> answer = new ArrayList<>();
-    static int max, m = 0;
+    static int answer = Integer.MIN_VALUE, max, m;
     public static void dfs(int level, int sum, int[] arr) {
         if (sum > max) return;
 
         if (level == m) {
-            answer.add(sum);
+            if (sum > answer) answer =sum;
         } else {
             dfs(level + 1, sum + arr[level], arr);
             dfs(level + 1, sum, arr);
@@ -25,13 +24,6 @@ public class Main2 {
         }
 
         dfs(0, 0, arr);
-        int max = Integer.MIN_VALUE;
-        for (Integer i : answer) {
-            if (i > max) {
-                max = i;
-            }
-        }
-
-        System.out.println(max);
+        System.out.println(answer);
     }
 }
