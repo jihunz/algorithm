@@ -6,7 +6,7 @@ public class Main5 {
     static int answer = Integer.MAX_VALUE, num, total;
 
     public static void dfs(int level, int sum, Integer[] arr) {
-        if (sum > total || level > answer) return;
+        if (sum > total || level >= answer) return;
 
         if (sum == total) {
             answer = Math.min(answer, level);
