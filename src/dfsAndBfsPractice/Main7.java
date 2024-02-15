@@ -1,3 +1,5 @@
+package dfsAndBfsPractice;
+
 import java.util.Scanner;
 
 public class Main7 {
