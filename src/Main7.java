@@ -18,7 +18,7 @@ class Edge2 implements Comparable<Edge2> {
 }
 
 
-//모든 정점 최소 비용으로 연경
+//모든 정점 최소 비용으로 연결
 public class Main7 {
     static int[] arr;
 
