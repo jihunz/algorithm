@@ -41,10 +41,10 @@ public class Main7 {
 
         Collections.sort(list);
         for (Edge2 item : list) {
-            int fV1 = Find(item.v1);
-            int fV2 = Find(item.v2);
+            int set1 = Find(item.v1);
+            int set2 = Find(item.v2);
             // Find -> 두 집합값이 다를때만 cost 누적 -> 합집합에 추가
-            if (fV1 != fV2) {
+            if (set1 != set2) {
                 answer += item.cost;
                 Union(item.v1, item.v2);
             }
@@ -54,9 +54,9 @@ public class Main7 {
     }
 
     private static void Union(int v1, int v2) {
-        int fv1 = Find(v1);
-        int fv2 = Find(v2);
-        if (fv1 != fv2) arr[fv1] = fv2;
+        int set1 = Find(v1);
+        int set2 = Find(v2);
+        if (set1 != set2) arr[set1] = set2;
     }
 
     private static int Find(int val) {
