@@ -43,6 +43,7 @@ public class Main7 {
         for (Edge2 item : list) {
             int fV1 = Find(item.v1);
             int fV2 = Find(item.v2);
+            // Find -> 두 집합값이 다를때만 cost 누적 -> 합집합에 추가
             if (fV1 != fV2) {
                 answer += item.cost;
                 Union(item.v1, item.v2);
