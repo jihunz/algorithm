@@ -1,5 +1,6 @@
+package greedyAlgorithm;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 

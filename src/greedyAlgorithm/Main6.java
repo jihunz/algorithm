@@ -1,3 +1,5 @@
+package greedyAlgorithm;
+
 import java.util.Scanner;
 
 
